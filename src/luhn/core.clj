@@ -40,7 +40,7 @@
        (reduce +)))
 
 (defn luhn-check? [int]
-  (= (mod int 10) 0))
+  (zero? (mod int 10)))
 
 (defn luhn? [credit-card-number]
   (->> credit-card-number
