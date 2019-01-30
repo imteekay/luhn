@@ -1,14 +1,10 @@
-(ns luhn.core
-  (:gen-class))
+(ns luhn.core)
 
 (defn remove-hyphen [str]
   (clojure.string/replace str "-" ""))
 
 (defn seq-char->int [seq-char]
   ((comp #(- % 48) int) seq-char))
-
-(ns luhn.core
-  (:gen-class))
 
 (defn remove-hyphen [str]
   (clojure.string/replace str "-" ""))
