@@ -27,7 +27,11 @@
     (loop [doubled-ints (list (first reversed-ints))
            [first second & remaining] (rest reversed-ints)]
       (if first
-        (recur (remove nil? (conj doubled-ints (* 2 first) second)) remaining)
+        (recur
+         (cond-> doubled-ints
+           first (conj (* 2 first))
+           second (conj second))
+         remaining)
         doubled-ints))))
 
 (defn digits [int]
