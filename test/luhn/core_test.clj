@@ -45,4 +45,10 @@
 (deftest luhn?-test
   (testing "Test if the credit card number passes the Luhn check"
     (is (= (luhn? "5678") true))
-    (is (= (luhn? "6789") false))))
+    (is (= (luhn? "6789") false))
+    (is (= (luhn? "3566-0020-2036-0505") true))
+    (is (= (luhn? "5555-5555-5555-4444") true))
+    (is (= (luhn? "5105-1051-0510-5100") true))
+    (is (= (luhn? "4111-1111-1111-1111") true))
+    (is (= (luhn? "3773-141-7670-4310") true))
+    (is (= (luhn? "3793-8559-4311-738") true))))
