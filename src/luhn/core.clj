@@ -20,13 +20,13 @@
 
 (defn double-two-by-two [ints]
   (let [reversed-ints (reverse ints)]
-    (loop [doubled-ints (list (first reversed-ints))
+    (loop [doubled-ints [(first reversed-ints)]
            [first second & remaining] (rest reversed-ints)]
       (if first
         (recur
-         (cond-> doubled-ints
-           first (conj (* 2 first))
-           second (conj second))
+         (cond->> doubled-ints
+           first (concat [(* 2 first)])
+           second (concat [second]))
          remaining)
         doubled-ints))))
 
